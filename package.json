@@ -1,5 +1,12 @@
 {
 	"name": "nginx-config-parser",
+	"description": "Parses nginx configs and converts back to strings",
+	"author": "Sean McCollum",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/adiktofsugar/node-nginx-config.git"
+	},
+	"main": "lib/nginx_config_parser",
 	"version": "0.0.1",
 	"dependencies": {
 	}
