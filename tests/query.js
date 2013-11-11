@@ -2,6 +2,7 @@ var vows = require('vows'),
 	assert = require('assert'),
 	
 	Queryable = require('../lib/Queryable'),
+	NodeBuilder = require('../lib/NodeBuilder'),
 	
 	fs = require('fs'),
 	getConf = function () {
@@ -117,6 +118,21 @@ vows.describe('Queries')
 			
 			// there is no doesNotMatch
 			assert.equal(matches, null);
+		}
+	},
+	'createNewNode': {
+		topic: Queryable.create( getConf() ).find('http', 'server')
+			.where('server_name')
+			.match(/another/),
+		
+		'creates new node with NodeBuilder': function (t) {
+			t.createNewNode('server')
+				.addDirective('expires', 'on')
+				.replaceQuery();
+			
+			var newQuery = t.root().find('http', 'server').where('expires').match('on');
+			
+			assert.equal(newQuery.length, 1);
 		}
 	}
 })
