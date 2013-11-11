@@ -7,7 +7,7 @@
 		"url": "git://github.com/adiktofsugar/node-nginx-config.git"
 	},
 	"main": "lib/nginx-config-parser",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"dependencies": {
 		"underscore": "~1.5.2"
 	}

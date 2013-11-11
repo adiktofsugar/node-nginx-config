@@ -120,12 +120,12 @@ vows.describe('Queries')
 			assert.equal(matches, null);
 		}
 	},
-	'createNewNode': {
+	'createNewNode/replaceQuery': {
 		topic: Queryable.create( getConf() ).find('http', 'server')
 			.where('server_name')
 			.match(/another/),
 		
-		'creates new node with NodeBuilder': function (t) {
+		'creates new node with NodeBuilder and replaces': function (t) {
 			t.createNewNode('server')
 				.addDirective('expires', 'on')
 				.replaceQuery();
@@ -133,6 +133,26 @@ vows.describe('Queries')
 			var newQuery = t.root().find('http', 'server').where('expires').match('on');
 			
 			assert.equal(newQuery.length, 1);
+		}
+	},
+	'createNewNode/addToQuery': {
+		topic: Queryable.create( getConf() ),
+		'creates new node with NodeBuilder and adds': function (t) {
+			var newQuery;
+			
+			newQuery = t.find('http', 'server');
+			assert.equal(newQuery.length, 3);
+			
+			// add new one
+			t.find('http').eq(0)
+				.createNewNode('server')
+				.addDirective('whoop', 'dee', 'doo')
+				.addToQuery();
+			
+			//console.log( t.stringify() );
+			
+			newQuery = t.find('http', 'server');
+			assert.equal(newQuery.length, 4);
 		}
 	}
 })
