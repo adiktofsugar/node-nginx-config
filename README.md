@@ -4,9 +4,11 @@ Nginx config parser
 Should parse and stringify nginx configs so they can be modified programmatically.
 
 Installation
+
 	npm install nginx-config-parser
 
 Example use:
+
 	var ncp = require('nginx-config-parser'),
 		fs = require('fs');
 	
