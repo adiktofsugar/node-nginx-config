@@ -2,6 +2,10 @@
 	"name": "nginx-config-parser",
 	"description": "Parses nginx configs and converts back to strings",
 	"author": "Sean McCollum",
+	"scripts": {
+		"lint": "eslint lib",
+		"prepublish": "npm run lint",
+	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/adiktofsugar/node-nginx-config.git"
@@ -10,5 +14,10 @@
 	"version": "0.1.1",
 	"dependencies": {
 		"underscore": "~1.5.2"
-	}
+	},
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-watch": "^6.0.1"
+	},
+	"license": "MIT"
 }

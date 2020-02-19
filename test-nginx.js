@@ -12,11 +12,11 @@ var nginx_config_parser = require('./lib/nginx_config_parser'),
 var nginxConfLocation = {
 		"test": './test-conf.conf',
 		"real": '/usr/local/nginx/conf/nginx.conf'
-	}[ WITH_NGINX_TEST ? "real" : "test" ],
-	confDir = '/usr/local/nginx/conf/';
+	}[ WITH_NGINX_TEST ? "real" : "test" ];
+var confDir = '/usr/local/nginx/conf/';
 
-var conf = nginx_config_parser.parse( fs.readFileSync(nginxConfLocation, 'utf-8') ),
-	sameThing = nginx_config_parser.stringify(conf);
+var conf = nginx_config_parser.parse( fs.readFileSync(nginxConfLocation, 'utf-8') );
+var sameThing = nginx_config_parser.stringify(conf);
 
 console.log(JSON.stringify(conf, null, 4));
 return;
