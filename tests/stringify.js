@@ -1,4 +1,5 @@
 var vows = require('vows'),
+	path = require('path'),
 	assert = require('assert'),
 	
 	stringify = require('../lib/stringify'),
@@ -7,7 +8,7 @@ var vows = require('vows'),
 	
 	fs = require('fs'),
 	getConf = function () {
-		return fs.readFileSync('./test-conf.conf', 'utf-8');
+		return fs.readFileSync(path.join(__dirname, 'test-conf.conf'), 'utf-8');
 	};
 
 

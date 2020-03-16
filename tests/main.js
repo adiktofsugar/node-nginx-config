@@ -1,12 +1,12 @@
 var vows = require('vows'),
+	path = require('path'),
 	assert = require('assert'),
 	
 	ncp = require('../lib/nginx-config-parser'),
-	stringify = require('../lib/stringify'),
 	
 	fs = require('fs'),
 	getConf = function () {
-		return fs.readFileSync('./test-conf.conf', 'utf-8');
+		return fs.readFileSync(path.join(__dirname, 'test-conf.conf'), 'utf-8');
 	};
 
 
