@@ -4,7 +4,7 @@
 	"author": "Sean McCollum",
 	"scripts": {
 		"lint": "eslint lib",
-		"prepublish": "npm run lint",
+		"prepublish": "npm run lint"
 	},
 	"repository": {
 		"type": "git",
