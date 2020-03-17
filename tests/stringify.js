@@ -1,15 +1,10 @@
 var vows = require('vows'),
-	path = require('path'),
 	assert = require('assert'),
 	
 	stringify = require('../lib/stringify'),
 	parse = require('../lib/parse'),
 	Queryable = require('../lib/Queryable'),
-	
-	fs = require('fs'),
-	getConf = function () {
-		return fs.readFileSync(path.join(__dirname, 'test-conf.conf'), 'utf-8');
-	};
+	getConf = require('./utils/getConf');
 
 
 vows.describe('stringify')
