@@ -1,13 +1,7 @@
 var vows = require('vows'),
 	assert = require('assert'),
-	
 	Queryable = require('../lib/Queryable'),
-	NodeBuilder = require('../lib/NodeBuilder'),
-	
-	fs = require('fs'),
-	getConf = function () {
-		return fs.readFileSync('./test-conf.conf', 'utf-8');
-	};
+	getConf = require('./utils/getConf');
 
 
 vows.describe('Queries')

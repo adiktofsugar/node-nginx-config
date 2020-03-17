@@ -1,13 +1,7 @@
 var vows = require('vows'),
-	assert = require('assert'),
-	
+	assert = require('assert'),	
 	ncp = require('../lib/nginx-config-parser'),
-	stringify = require('../lib/stringify'),
-	
-	fs = require('fs'),
-	getConf = function () {
-		return fs.readFileSync('./test-conf.conf', 'utf-8');
-	};
+	getConf = require('./utils/getConf');
 
 
 vows.describe('main module')

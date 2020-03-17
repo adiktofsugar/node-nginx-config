@@ -1,12 +1,7 @@
 var vows = require('vows'),
 	assert = require('assert'),
-	
 	parse = require('../lib/parse'),
-	
-	fs = require('fs'),
-	getConf = function () {
-		return fs.readFileSync('./test-conf.conf', 'utf-8');
-	};
+	getConf = require('./utils/getConf');
 
 
 

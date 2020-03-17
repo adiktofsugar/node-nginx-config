@@ -4,6 +4,7 @@
 	"author": "Sean McCollum",
 	"scripts": {
 		"lint": "eslint lib",
+		"test": "vows",
 		"prepublish": "npm run lint"
 	},
 	"repository": {
@@ -17,7 +18,8 @@
 	},
 	"devDependencies": {
 		"eslint": "^6.8.0",
-		"eslint-watch": "^6.0.1"
+		"eslint-watch": "^6.0.1",
+		"vows": "^0.8.3"
 	},
 	"license": "MIT"
 }
