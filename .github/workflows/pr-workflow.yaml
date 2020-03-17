@@ -3,8 +3,8 @@ name: Validate PR
 on:
   - pull_request
 jobs:
-  setup:
-    name: setup
+  lint:
+    name: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,17 +12,14 @@ jobs:
         with:
           node-version: 10.x
       - run: npm ci
-  lint:
-    needs:
-      - setup
-    name: lint
-    runs-on: ubuntu-latest
-    steps:
       - run: npm run lint
   test:
-      needs:
-        - setup
       name: test
       runs-on: ubuntu-latest
       steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: npm ci
         - run: npm test
